@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1 #{title} - URLs
+  ul
+    each url, val in urls
+      li= val 
