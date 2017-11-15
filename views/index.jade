@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1= title
+    small Where you can have your URL cat fact
+
+  unless errors
+    unless shadifiedURL
+      p #{count} URLs have been cat facted!  
+
+    if shadifiedURL
+      p This URL has been cat facted!
+      #cat-fact-url 
+        a(href="#{shadifiedURL}") #{shadifiedURL}
+
+      #original
+        p You submmitted:
+          a(href="#{original}") #{original}
+
+      #again
+        p Want to cat fact another one?
+
+  if errors
+    #error
+      #{errors}
+
+  form(method="POST" action="/")
+    input(type="text", placeholder="Enter URL", name="url")
+    button(type="submit") Submit
+
+  unless shadifiedURL
+    ul
+      each url, val in urls
+        li.url: a(href="#{url.shadyURL}") #{url.shadyURL}
