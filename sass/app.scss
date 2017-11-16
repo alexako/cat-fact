@@ -1,3 +1,83 @@
+@import 'input';
+
+$header-font-stack: 'Raleway', sans-serif;
+$header-font-size: 3em;
+$font-stack: 'Open sans', sans-serif;
+$font-color: limegreen;
+$font-size: 16px;
+$background-color: #1e1e20;
+
+
+body {
+    font-family: $font-stack;
+    font-size: $font-size;
+    color: $font-color;
+    background-color: $background-color;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
 h1 {
-  color: grey;
+    color: $font-color;
+    font-family: $header-font-stack;
+    font-size: $header-font-size;
+    small {
+        font-size: 0.7em;
+        font-weight: 300;
+        font-style: italic;
+        color: dimgrey;
+        padding: 0.3em;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 85vw;
+    max-width: 900px;
+    margin: 0 auto;
+    li {
+        color: #00B7FF;
+        padding: 0.5em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border-bottom: 2px solid dimgray;
+        a {
+          color: dimgray;
+          display: block;
+          text-decoration: none;
+          &:hover {
+            color: #00B7FF;
+            transition: 500ms;
+          }
+        }
+    }
+}
+
+footer {
+    font-family: $header-font-stack;
+    font-size: 1.1em;
+    padding: 1vh 0;
+    width: 100%;
+    margin-top: 5em;
+    p {
+        text-align: center;
+        a {
+            color: $font-color;
+            text-decoration: none;
+            &:hover {
+                cursor: pointer;
+                color: #00B7FF;
+            }
+        }
+    }
 }
