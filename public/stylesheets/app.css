@@ -154,7 +154,9 @@ body {
   font-family: "Open sans", sans-serif;
   font-size: 16px;
   color: limegreen;
-  background-color: #1e1e20; }
+  background-color: #1e1e20;
+  padding-bottom: 0;
+  margin-bottom: 0; }
 
 .wrapper {
   max-width: 900px;
@@ -193,3 +195,18 @@ ul {
       ul li a:hover {
         color: #00B7FF;
         transition: 500ms; }
+
+footer {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1em;
+  padding: 1vh 0;
+  width: 100%;
+  margin-top: 5em; }
+  footer p {
+    text-align: center; }
+    footer p a {
+      color: limegreen;
+      text-decoration: none; }
+      footer p a:hover {
+        cursor: pointer;
+        color: #00B7FF; }

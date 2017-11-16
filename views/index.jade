@@ -38,3 +38,10 @@ block content
         ul
           each url, val in urls
             li: a(href="#{url.shadyURL}") #{url.catFact}
+
+  footer
+    p
+      a(href="http://alexjreyes.com") alexjreyes.com
+      &nbsp;&copy;
+      script.
+        document.write(new Date().getFullYear());

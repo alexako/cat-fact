@@ -13,6 +13,8 @@ body {
     font-size: $font-size;
     color: $font-color;
     background-color: $background-color;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .wrapper {
@@ -57,6 +59,25 @@ ul {
             color: #00B7FF;
             transition: 500ms;
           }
+        }
+    }
+}
+
+footer {
+    font-family: $header-font-stack;
+    font-size: 1.1em;
+    padding: 1vh 0;
+    width: 100%;
+    margin-top: 5em;
+    p {
+        text-align: center;
+        a {
+            color: $font-color;
+            text-decoration: none;
+            &:hover {
+                cursor: pointer;
+                color: #00B7FF;
+            }
         }
     }
 }
