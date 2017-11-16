@@ -1,8 +1,19 @@
 doctype html
 html
   head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Have your URL cat facted')
+    meta(name='theme-color', content='limegreen')
+    meta(name='msapplication-navbutton-color', content='limegreen')
+    meta(name='apple-mobile-web-app-status-bar-style', content='limegreen')
+
     title= title
+
+    link(rel='shortcut icon', href='', type='image/icon')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=OpenSans|Raleway:400,300i')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/app.css')
+
   body
     block content

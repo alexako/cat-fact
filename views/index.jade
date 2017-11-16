@@ -1,16 +1,14 @@
 extends layout
 
 block content
-  h1= title
-    small Where you can have your URL cat fact
-
-  unless errors
-    unless shadifiedURL
-      p #{count} URLs have been cat facted!  
+  .wrapper
+    a(href=".")
+      h1= title
+        small Where you can get your URL cat fact
 
     if shadifiedURL
-      p This URL has been cat facted!
-      #cat-fact-url 
+      p Your URL has been cat fact!
+      #cat-fact-url
         a(href="#{shadifiedURL}") #{shadifiedURL}
 
       #original
@@ -18,17 +16,25 @@ block content
           a(href="#{original}") #{original}
 
       #again
-        p Want to cat fact another one?
+        h2 Want to cat fact another one?
 
-  if errors
-    #error
-      #{errors}
+    if errors
+      #error
+        #{errors}
 
-  form(method="POST" action="/")
-    input(type="text", placeholder="Enter URL", name="url")
-    button(type="submit") Submit
+    .container
+      form.form(method="POST" action="/")
+        fieldset(class='form-fieldset ui-input __first')
+          input(type="text", name="url")
+          label(for='url')
+            span(data-text='Enter URL') Enter URL
 
-  unless shadifiedURL
-    ul
-      each url, val in urls
-        li.url: a(href="#{url.shadyURL}") #{url.shadyURL}
+        .form-footer
+          button(type="submit", class='btn') Submit
+
+    unless shadifiedURL
+      p #{count} URLs have been cat fact!
+      if urls
+        ul
+          each url, val in urls
+            li: a(href="#{url.shadyURL}") #{url.catFact}
