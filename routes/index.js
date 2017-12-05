@@ -38,6 +38,21 @@ router.get('/api', function(req, res, next) {
   });
 });
 
+/* GET by ID API */
+router.get('/api/:id', function(req, res, next) {
+  models.URL.findAndCountAll({
+    include: [{
+      model: models.ShadyURL,
+      required: true
+    }]
+  }).then(function(urls) {
+    var response = urls.rows.filter(function(url) {
+      console.log("url:", url);
+      return url.dataValues.id == req.params.id;
+    });
+    res.send(response);
+  });
+});
 
 /* POST url */
 router.post('/', function(req, res) {
@@ -136,6 +151,22 @@ router.post('/api', function(req, res) {
   })
   .catch(function(err) {
     console.log(err);
+  });
+});
+
+/* DELETE API */
+router.delete('/api/:id', function(req, res, next) {
+  console.log('req:', req.params.id);
+  models.ShadyURL.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function(response) {
+      res.send(response);
+  })
+  .catch(function(err) {
+      console.log(err);
   });
 });
 
