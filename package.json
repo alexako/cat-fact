@@ -23,5 +23,9 @@
     "sequelize": "^4.22.6",
     "sequelize-cli": "^3.0.0",
     "serve-favicon": "~2.4.5"
+  },
+  "engines": {
+      "npm": ">=8.0.0 <9.0.0",
+      "node": ">16.0.0 < 17.0.0"
   }
 }
